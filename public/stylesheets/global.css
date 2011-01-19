@@ -1,0 +1,295 @@
+/*----------------------------------------------------
+GLOBAL
+
+Main font is Minion Pro set by Typekit.
+----------------------------------------------------*/
+
+/* Browser */
+
+body { 
+  padding: 30px;
+  text-align: center;
+  background-color: #fff;
+  color: #222;
+  background: -moz-linear-gradient(center top , #569456, #FFFFFF) repeat scroll 0 0 transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(#569456), to(#FFFFFF));
+
+}
+
+body, h1, h2, h3, h4, h5, p {
+  font-family: "minion-pro-1","minion-pro-2", "Times New Roman", Georgia, serif;
+}
+
+img {
+  border: 0;
+}
+
+a {
+  color: #FFF;
+}
+
+a:hover {
+   color: #d0d0d0;
+}
+
+a:active, a:focus {
+  outline: 0;
+}
+
+hr {
+  clear: both;
+  border: 0;
+  color: transparent;
+  height: 12px;
+}
+
+div.container, div.footer {
+  margin: 0 auto 30px;
+  width: 820px;
+  padding: 0;
+}
+
+h1 {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 58px;
+  clear: both;
+  line-height: 1.0em;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+	color: #232323;
+}
+
+h2 {
+  color: #232323;
+  margin: 30px 0;
+  font-size: 48px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.1em;
+  letter-spacing: -1px;
+}
+
+h6 {
+  margin: 5px 0 10px;
+  font-size: 14px;
+  color: #cc0000;
+}
+
+/*----------------------------------------------------
+NAV
+----------------------------------------------------*/
+
+div.nav {
+  text-align: right;
+  padding: 10px;
+  margin: -30px 0 20px 0;
+}
+
+div.nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+div.nav ul li {
+  list-style-type: none;
+  display: inline;
+  margin: 0;
+  padding: 0 10px 0;
+  font-size: 12px;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+div.logo {
+	float:left;
+}
+
+body.index div.nav ul li.home {
+  display: none;
+}
+
+body.index div.nav ul li.logo {
+  display: none;
+  padding: 0;
+}
+
+div.nav ul li img.logo {
+  margin-top: -5px;
+}
+
+div.nav ul li a {
+  text-decoration: none;
+}
+
+div.nav ul li a.signin {
+color: #fff;
+}
+
+div.nav ul li a.signin:hover {
+  color: #d0d0d0;
+}
+
+/*----------------------------------------------------
+INDEX
+----------------------------------------------------*/
+
+/* PRODUCTS */
+
+body.index h5 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+body.index div.box-container {
+  padding-left: 15px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+body.index div.box-container div.headline {
+  width: 825px;
+  margin-left: -20px;
+}
+
+body.index a.box {
+  width: 160px;
+  margin: 15px 20px 5px 0;
+  float: left;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #d7f1e0;
+  -moz-box-shadow: 0 0 5px #d7f1e0;
+  box-shadow: 0 0 5px #d7f1e0;
+  padding: 20px 10px 10px;
+  text-decoration: none;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#d7f1e0));
+  background: -moz-linear-gradient(top,  #fff,  #d7f1e0);
+}
+
+body.index a.box.hover {
+  -webkit-box-shadow: 0 0 10px #333;
+  -moz-box-shadow: 0 0 10px #333;
+  box-shadow: 0 0 10px #333;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#d7f1e0));
+  background: -moz-linear-gradient(top,  #fff,  #d7f1e0);
+}
+
+body.index a.box.end,
+body.index div.column.end {
+  margin-right: 0;
+}
+
+body.index a.box h3 {
+  font-size: 21px;
+  margin: 3px 0 0 10px;
+  color: #000;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-weight: bold;
+}
+
+body.index a.box h3 span {
+  text-decoration: underline;
+}
+
+body.index a.box h3 sup {
+  color: #999;
+  font-weight: normal;
+  font-size: 11px;
+}
+
+body.index a.box h4 {
+  margin: 5px 0 10px;
+  font-size: 14px;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  color: #cc0000;
+}
+
+body.index a.box p {
+  color: #222;
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-top: 5px;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+body.index a.box p.action {
+  display: none;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 7px 0;
+  font-weight: bold;
+
+  background: -moz-linear-gradient(top,  #fff,  #e8e8e8);
+  color: #336699;
+}
+
+body.index a.box.hover p.blurb { display: none; }
+body.index a.box.hover p.action { display: block; }
+
+body.index a.box div.product {
+
+  padding: 7px 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  
+  display: none;
+  position: absolute;
+  margin: -200px 0 0 -35px;
+  background-color: #d7f1e0;
+  width: 825px;
+  height: 180px;
+}
+
+body.index a.box div.product h1 {
+  color: #222;
+  margin: 10px 0 15px 0;
+  font-size: 46px;
+	letter-spacing: -1px;
+}
+
+body.index a.box div.product h1 span {
+  color: #336699;
+  text-decoration: underline;
+}
+
+body.index a.box div.product p { font-size: 15px; }
+body.index a.box div.product img.arrow { margin-top: -10px; }
+
+body.index a.box div.product.gf { z-index: 2; }
+body.index a.box div.product.re { z-index: 4; margin-left: -230px; }
+body.index a.box div.product.ag { z-index: 6; margin-left: -430px; }
+body.index a.box div.product.gc { z-index: 8; margin-left: -630px; }
+
+body.index a.box.hover div.product { display: block; }
+
+
+/*----------------------------------------------------
+RESPONSIVE CSS
+----------------------------------------------------*/
+
+/* iPhone */
+@media only screen and (max-device-width: 480px) {
+  h1 { font-size: 52px; }
+  h2 { font-size: 42px; }
+  body.index div.rework div.quotes h3 { line-height: 1.0em; margin: 10px 0; }
+}
+
+/* iPad */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  h1 { font-size: 52px; }
+  h2 { font-size: 42px; }
+  body.index h5 { font-size: 18px; }
+  body.index a.box div.product h1 { font-size: 42px; }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  h1 { font-size: 52px; }
+  h2 { font-size: 42px; }
+  body.index h5 { font-size: 18px; }
+  body.index a.box div.product h1 { font-size: 42px; }
+}
