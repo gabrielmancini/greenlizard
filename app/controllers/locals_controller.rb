@@ -1,13 +1,12 @@
 class LocalsController < ApplicationController
+  after_filter :render_single, :only => [:index, :show, :new]
+  
   # GET /locals
   # GET /locals.xml
   def index
     @locals = Local.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @locals }
-    end
+    
   end
 
   # GET /locals/1
@@ -15,10 +14,6 @@ class LocalsController < ApplicationController
   def show
     @local = Local.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @local }
-    end
   end
 
   # GET /locals/new
@@ -26,10 +21,6 @@ class LocalsController < ApplicationController
   def new
     @local = Local.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @local }
-    end
   end
 
   # GET /locals/1/edit
@@ -80,4 +71,15 @@ class LocalsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+  def render_single
+  	respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @locals }
+      format.json  { render :json => @locals }
+    end
+  end
+  
 end
