@@ -1,5 +1,6 @@
 class LocalsController < ApplicationController
-  after_filter :render_single, :only => [:index, :show, :new]
+  after_filter :render_single, :only => [:show, :new]
+  after_filter :render_multiple, :only => [:index]
   
   # GET /locals
   # GET /locals.xml
@@ -75,6 +76,14 @@ class LocalsController < ApplicationController
   private
   
   def render_single
+  	respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @local }
+      format.json  { render :json => @local }
+    end
+  end
+  
+  def render_multiple
   	respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @locals }
