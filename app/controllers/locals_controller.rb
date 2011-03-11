@@ -8,6 +8,7 @@ class LocalsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @locals }
+      format.json  { render :json => @locals }
     end
   end
 
@@ -19,6 +20,7 @@ class LocalsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @local }
+      format.json  { render :json => @local }
     end
   end
 
@@ -29,7 +31,8 @@ class LocalsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render :json => @local }
+      format.xml  { render :xml => @local }
+      format.json  { render :json => @local }
     end
   end
 
@@ -47,9 +50,11 @@ class LocalsController < ApplicationController
       if @local.save
         format.html { redirect_to(@local, :notice => 'Local was successfully created.') }
         format.xml  { render :xml => @local, :status => :created, :location => @local }
+        format.json  { render :json => @local, :status => :created, :location => @local }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @local.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @local.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -63,9 +68,11 @@ class LocalsController < ApplicationController
       if @local.update_attributes(params[:local])
         format.html { redirect_to(@local, :notice => 'Local was successfully updated.') }
         format.xml  { head :ok }
+        format.json { head :ok }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @local.errors, :status => :unprocessable_entity }
+        format.json { render :json => @local.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -79,6 +86,7 @@ class LocalsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(locals_url) }
       format.xml  { head :ok }
+      format.json { head :ok }
     end
   end
 end
