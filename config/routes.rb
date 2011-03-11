@@ -1,4 +1,8 @@
 Greenlizard::Application.routes.draw do
+  resources :locals
+
+  resources :satelites
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

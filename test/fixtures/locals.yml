@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  satelite_id: 
+  latitude: 
+  longitude: 
+
+two:
+  satelite_id: 
+  latitude: 
+  longitude: 

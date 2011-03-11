@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @satelite.name %>
+</p>
+
+<p>
+  <b>Show:</b>
+  <%= @satelite.show %>
+</p>
+
+
+<%= link_to 'Edit', edit_satelite_path(@satelite) %> |
+<%= link_to 'Back', satelites_path %>

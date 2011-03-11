@@ -1,0 +1,2 @@
+module SatelitesHelper
+end

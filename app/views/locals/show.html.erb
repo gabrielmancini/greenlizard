@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Satelite:</b>
+  <%= @local.satelite_id %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @local.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @local.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_local_path(@local) %> |
+<%= link_to 'Back', locals_path %>
