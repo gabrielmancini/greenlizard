@@ -14,6 +14,18 @@ class LocalsController < ApplicationController
 
   # GET /locals/1
   # GET /locals/1.xml
+  def last
+    @local = Local.last
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @local }
+      format.json  { render :json => @local }
+    end
+  end
+  
+  # GET /locals/1
+  # GET /locals/1.xml
   def show
     @local = Local.find(params[:id])
 

@@ -3,9 +3,16 @@
 <head>
   <title>Greenlizard</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript">
+	  <% extras = RAILS_ENV == "development" ? "{ uncompressed: true }": "{}" %>
+	  google.load("jquery", "1.5.1", <%= extras %>);
+	  google.load("jqueryui", "1.8.10", <%= extras %>);
+	  google.load("maps", "3", {other_params: "sensor=false"});
+  </script>
+
+  <meta name="rails-controller" content="<%= controller.controller_name %>" />
+  <meta name="rails-action" content="<%= controller.action_name %>" /></head>
 <body>
 
 <%= yield %>
