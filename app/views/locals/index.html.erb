@@ -25,57 +25,6 @@
 
   var SAMPLES = 256;
 
-  var examples = [{
-    // Lombard St
-    latlngs: [
-      [37.801000, -122.426499],
-      [37.802051, -122.419418],
-      [37.802729, -122.413989]
-    ],
-    mapType: google.maps.MapTypeId.ROADMAP,
-    travelMode: 'driving'
-  },{
-    // Mount Everest
-    latlngs: [
-      [27.973323, 86.908035],
-      [28.020614, 86.960906]
-    ],
-    mapType: google.maps.MapTypeId.TERRAIN,
-    travelMode: 'direct'
-  },{
-    // Challenger Deep
-    latlngs: [
-      [9.764009, 143.076632],
-      [11.932658, 142.373507]
-    ],
-    mapType: google.maps.MapTypeId.SATELLITE,
-    travelMode: 'direct'
-  },{
-    // Death Valley
-    latlngs: [
-      [37.040952, -117.300314],
-      [35.896862, -116.654868],
-      [35.972751, -116.270689]
-    ],
-    mapType: google.maps.MapTypeId.TERRAIN,
-    travelMode: 'driving'
-  },{
-    // Grand Canyon
-    latlngs: [
-      [36.012196, -112.100348],
-      [36.221866, -112.098975],
-    ],
-    mapType: google.maps.MapTypeId.TERRAIN,
-    travelMode: 'direct'
-  },{
-    // Uluru
-    latlngs: [
-      [-25.34696, 131.022323],
-      [-25.34060, 131.045927]
-    ],
-    mapType: google.maps.MapTypeId.SATELLITE,
-    travelMode: 'direct'
-  }];
 
   // Load the Visualization API and the piechart package.
   google.load("visualization", "1", {packages: ["columnchart"]});
@@ -189,7 +138,6 @@
 
   // Add a marker and trigger recalculation of the path and elevation
   function addMarker(latlng, doQuery) {
-    if (markers.length < 10) {
 
       var marker = new google.maps.Marker({
         position: latlng,
@@ -207,12 +155,6 @@
         updateElevation();
       }
 
-      if (markers.length == 10) {
-        document.getElementById('address').disabled = true;
-      }
-    } else {
-      alert("No more than 10 points can be added");
-    }
   }
 
   // Trigger the elevation query for point to point
@@ -281,26 +223,6 @@
     });
   }
 
-  // Trigger a geocode request when the Return key is
-  // pressed in the address field
-  function addressKeyHandler(e) {
-    var keycode;
-    if (window.event) {
-      keycode = window.event.keyCode;
-    } else if (e) {
-      keycode = e.which;
-    } else {
-      return true;
-    }
-
-    if (keycode == 13) {
-       addAddress();
-       return false;
-    } else {
-       return true;
-    }
-  }
-
   function loadLocals() {
     var data;
 
@@ -342,25 +264,8 @@
     map.fitBounds(bounds);
     updateElevation();
 
-
   }
 
-  function loadExample(n) {
-    reset();
-    map.setMapTypeId(examples[n].mapType);
-    document.getElementById('mode').value = examples[n].travelMode;
-    var bounds = new google.maps.LatLngBounds();
-    for (var i = 0; i < examples[n].latlngs.length; i++) {
-      var latlng = new google.maps.LatLng(
-        examples[n].latlngs[i][0],
-        examples[n].latlngs[i][1]
-      );
-      addMarker(latlng, false);
-      bounds.extend(latlng);
-    }
-    map.fitBounds(bounds);
-    updateElevation();
-  }
 
   // Clear all overlays, reset the array of points, and hide the chart
   function reset() {
