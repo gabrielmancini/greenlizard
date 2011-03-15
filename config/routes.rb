@@ -1,4 +1,5 @@
 Greenlizard::Application.routes.draw do
+  match 'locals/last' => 'locals#last', :as => :last
   resources :locals
 
   resources :satelites
