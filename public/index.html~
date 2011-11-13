@@ -4,7 +4,16 @@
 	    CONTENT="text/html; charset=ISO-8859-1"> 
 	</head>
 	<body>
-		<img src="images/logo.jpg" />
-		<h1>Site temporariamente down!</h1>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+
+		<a href="http://www.facebook.com/GreenLizardTi"><img src="images/logo.jpg" /></a>
 	</body>
 </html>
